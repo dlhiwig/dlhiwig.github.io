@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Heiwig — Technology Leader & Army Reserve Officer</title>
-    <meta name="description" content="Daniel Heiwig is a Lieutenant Colonel in the U.S. Army Reserve and technology leader building AI-powered solutions for defense and fitness.">
+    <title>Daniel Heiwig — Strategic AI Planner & Army Reserve Officer</title>
+    <meta name="description" content="LTC Daniel Heiwig — Strategic AI Planner at Office of the Chief, Army Reserve. Building cognitive AI systems for defense. PhD Candidate, 20+ years military leadership.">
+    <meta property="og:title" content="Daniel Heiwig — Strategic AI Planner">
+    <meta property="og:description" content="Senior Army Reserve officer building AI systems that bridge cutting-edge technology and defense applications.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dlhiwig.github.io">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦅</text></svg>">
     <style>
         :root {
@@ -17,11 +21,7 @@
             --border: #e2e8f0;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
@@ -30,11 +30,7 @@
             background: var(--bg);
         }
         
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
         
         header {
             padding: 4rem 0 3rem;
@@ -44,19 +40,20 @@
         }
         
         .avatar {
-            width: 120px;
-            height: 120px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--primary), #2c5282);
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1.5rem;
-            font-size: 3rem;
+            font-size: 3.5rem;
+            box-shadow: 0 4px 20px rgba(26, 54, 93, 0.3);
         }
         
         h1 {
-            font-size: 2.25rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 0.5rem;
@@ -64,13 +61,40 @@
         
         .title {
             color: var(--text-light);
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
         }
         
-        .title span {
-            color: var(--accent);
-            font-weight: 600;
+        .title span { color: var(--accent); font-weight: 600; }
+        
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .badges {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        
+        .badge {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+        
+        .badge.accent {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
         }
         
         .links {
@@ -87,13 +111,9 @@
             transition: color 0.2s;
         }
         
-        .links a:hover {
-            color: var(--accent);
-        }
+        .links a:hover { color: var(--accent); }
         
-        section {
-            margin-bottom: 3rem;
-        }
+        section { margin-bottom: 3rem; }
         
         h2 {
             font-size: 1.5rem;
@@ -104,10 +124,7 @@
             display: inline-block;
         }
         
-        p {
-            margin-bottom: 1rem;
-            color: var(--text);
-        }
+        p { margin-bottom: 1rem; }
         
         .highlight {
             background: var(--bg-alt);
@@ -117,9 +134,18 @@
             margin: 1.5rem 0;
         }
         
-        .projects {
-            display: grid;
-            gap: 1.5rem;
+        .quote {
+            font-style: italic;
+            color: var(--text-light);
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .projects { display: grid; gap: 1.5rem; }
+        
+        @media (min-width: 600px) {
+            .projects { grid-template-columns: repeat(2, 1fr); }
         }
         
         .project {
@@ -147,11 +173,7 @@
             margin-bottom: 0.75rem;
         }
         
-        .tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
+        .tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
         
         .tag {
             background: var(--primary);
@@ -162,20 +184,74 @@
             font-weight: 500;
         }
         
-        .experience {
-            margin-bottom: 1.5rem;
+        .experience-grid { display: flex; flex-direction: column; gap: 1.5rem; }
+        
+        .experience-item {
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
         }
         
-        .experience h3 {
+        .experience-item:last-child { border-bottom: none; padding-bottom: 0; }
+        
+        .experience-item h3 {
             color: var(--primary);
             font-size: 1.1rem;
             margin-bottom: 0.25rem;
         }
         
-        .experience .meta {
+        .experience-item .org {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        .experience-item .meta {
             color: var(--text-light);
             font-size: 0.9rem;
             margin-bottom: 0.5rem;
+        }
+        
+        .experience-item ul {
+            margin-left: 1.25rem;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+        
+        .experience-item li { margin-bottom: 0.35rem; }
+        
+        .skills-grid {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        @media (min-width: 600px) {
+            .skills-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        
+        .skill-category h4 {
+            color: var(--primary);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-category p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        
+        .awards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        
+        .award {
+            background: var(--bg-alt);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border);
         }
         
         footer {
@@ -187,15 +263,9 @@
         }
         
         @media (max-width: 600px) {
-            .container {
-                padding: 1rem;
-            }
-            header {
-                padding: 2rem 0;
-            }
-            h1 {
-                font-size: 1.75rem;
-            }
+            .container { padding: 1rem; }
+            header { padding: 2rem 0; }
+            h1 { font-size: 1.75rem; }
         }
     </style>
 </head>
@@ -204,7 +274,14 @@
         <header>
             <div class="avatar">🦅</div>
             <h1>Daniel Heiwig</h1>
-            <p class="title"><span>LTC</span>, U.S. Army Reserve · Technology Leader</p>
+            <p class="title"><span>LTC</span>, U.S. Army Reserve</p>
+            <p class="subtitle">Strategic AI Planner • PhD Candidate • Defense Technologist</p>
+            <div class="badges">
+                <span class="badge accent">TS/SCI</span>
+                <span class="badge">20+ Years Service</span>
+                <span class="badge">PhD Candidate</span>
+                <span class="badge">Combat Veteran</span>
+            </div>
             <div class="links">
                 <a href="https://github.com/dlhiwig">GitHub</a>
                 <a href="https://linkedin.com/in/daniel-heiwig">LinkedIn</a>
@@ -214,10 +291,11 @@
 
         <section>
             <h2>About</h2>
-            <p>I'm a Lieutenant Colonel in the U.S. Army Reserve and technology leader focused on building AI-powered solutions for defense, fitness, and enterprise applications.</p>
-            <p>Currently leading the <strong>Black Eagle Project</strong> — developing innovative fitness and readiness tools for military personnel — while exploring the frontier of autonomous AI agents.</p>
+            <p>Senior Army Reserve officer (O-5) and Strategic AI Planner serving the <strong>Office of the Chief, Army Reserve</strong>. I build AI systems that bridge the gap between cutting-edge technology and real-world defense applications.</p>
+            <p>Creator of a first-of-its-kind <strong>cognitive AI platform for adversary decision modeling</strong> at U.S. Central Command, achieving 90% predictive confidence. My work combines doctoral-level quantitative research with hands-on technical fluency across Python, Rust, and modern LLM architectures.</p>
+            <p class="quote">"Translating emerging AI capabilities into validated warfighting advantage."</p>
             <div class="highlight">
-                <strong>Focus Areas:</strong> AI Agents · Multi-Agent Systems · Defense Technology · Fitness Applications · Edge Computing
+                <strong>Current Focus:</strong> Advising Army Reserve leadership on AI integration, evaluating emerging capabilities for warfighter readiness, and serving as liaison between OCAR, Army Futures Command, and the Chief Digital and AI Office (CDAO).
             </div>
         </section>
 
@@ -225,28 +303,8 @@
             <h2>Projects</h2>
             <div class="projects">
                 <div class="project">
-                    <h3>🦅 Black Eagle Project</h3>
-                    <p>Nonprofit organization building technology solutions for U.S. Army Reserve readiness and fitness programs.</p>
-                    <div class="tags">
-                        <span class="tag">Nonprofit</span>
-                        <span class="tag">Defense</span>
-                        <span class="tag">Fitness</span>
-                    </div>
-                </div>
-                
-                <div class="project">
-                    <h3>🏃 DEFIT</h3>
-                    <p>Double Eagle Fitness challenge platform — leaderboards, workout tracking, and team competition for Army Reserve units.</p>
-                    <div class="tags">
-                        <span class="tag">Next.js</span>
-                        <span class="tag">Firebase</span>
-                        <span class="tag">PWA</span>
-                    </div>
-                </div>
-                
-                <div class="project">
                     <h3>⚡ SuperClaw</h3>
-                    <p>Governance-first multi-agent AI orchestration system. Independent runtime with support for Claude, Gemini, and local models.</p>
+                    <p>Independent Agent OS with governance-first architecture. Multi-agent swarm orchestration supporting 15+ LLM providers.</p>
                     <div class="tags">
                         <span class="tag">TypeScript</span>
                         <span class="tag">AI Agents</span>
@@ -255,12 +313,31 @@
                 </div>
                 
                 <div class="project">
+                    <h3>🏃 DEFIT</h3>
+                    <p>Double Eagle Fitness challenge platform — leaderboards, workout tracking, team competition for Army Reserve.</p>
+                    <div class="tags">
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">PWA</span>
+                    </div>
+                </div>
+                
+                <div class="project">
                     <h3>🤖 SWAI</h3>
-                    <p>Consumer-grade edge AI platform — zero recurring fees, fully offline capable. Built for NVIDIA Jetson hardware.</p>
+                    <p>Sovereign edge AI platform — zero recurring fees, fully offline. Built for NVIDIA Jetson hardware.</p>
                     <div class="tags">
                         <span class="tag">Rust</span>
                         <span class="tag">Edge AI</span>
                         <span class="tag">Embedded</span>
+                    </div>
+                </div>
+                
+                <div class="project">
+                    <h3>🦅 Black Eagle Project</h3>
+                    <p>Nonprofit building open-source fitness and readiness tools for military communities.</p>
+                    <div class="tags">
+                        <span class="tag">Nonprofit</span>
+                        <span class="tag">Defense Tech</span>
                     </div>
                 </div>
             </div>
@@ -268,29 +345,131 @@
 
         <section>
             <h2>Experience</h2>
-            <div class="experience">
-                <h3>Lieutenant Colonel</h3>
-                <p class="meta">U.S. Army Reserve · 2026 – Present</p>
-                <p>Leading technology initiatives and fitness programs for reserve component readiness.</p>
+            <div class="experience-grid">
+                <div class="experience-item">
+                    <h3>Strategic Planner for Artificial Intelligence</h3>
+                    <p class="org">Office of the Chief, Army Reserve (OCAR)</p>
+                    <p class="meta">Apr 2025 – Present · Arlington, VA</p>
+                    <ul>
+                        <li>Advises Commanding General on AI integration and Army Reserve transformation</li>
+                        <li>Translates national AI policy into operational guidance for warfighter integration</li>
+                        <li>Enterprise liaison between OCAR, Army Futures Command, and CDAO</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <h3>Senior ORSA (Operations Research & Systems Analysis)</h3>
+                    <p class="org">Army Reserve Careers Group (ARCG)</p>
+                    <p class="meta">Sep 2021 – Apr 2025 · Fort Knox, KY</p>
+                    <ul>
+                        <li>Applied statistical modeling and mathematical optimization to force retention challenges</li>
+                        <li>Developed predictive models for personnel attrition and accession trends</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <h3>Director, Cognitive Software Systems</h3>
+                    <p class="org">U.S. Central Command (USCENTCOM)</p>
+                    <p class="meta">Jul 2020 – Sep 2021 · Tampa, FL</p>
+                    <ul>
+                        <li>Architected CENTCOM's Human Dynamics Analysis (HDA) — first cognitive AI platform for adversary decision modeling</li>
+                        <li>Achieved 90% predictive confidence and IOC in February 2020</li>
+                        <li>Led predictive/prescriptive analytics for combatant command leadership</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <h3>Deputy Director / CFO, Force Structure (J8)</h3>
+                    <p class="org">U.S. Central Command (USCENTCOM)</p>
+                    <p class="meta">Sep 2019 – Jul 2020 · Tampa, FL</p>
+                    <ul>
+                        <li>Directed fiscal governance of $9.7B zero-base defense budget</li>
+                        <li>Negotiated $30B military modernization contract with Kingdom of Saudi Arabia</li>
+                        <li>Briefed U.S. House and Senate Armed Services Committees</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <h3>Senior Operations Director, Special Activities (J3)</h3>
+                    <p class="org">U.S. Central Command (USCENTCOM)</p>
+                    <p class="meta">Oct 2016 – Sep 2019 · Tampa, FL</p>
+                    <ul>
+                        <li>Orchestrated multi-domain clandestine operations contributing to strategic defeat of ISIS</li>
+                        <li>Led counter-terrorism and nuclear counter-proliferation operations</li>
+                        <li>Principal liaison to USSOCOM, Joint Staff, OSD, and foreign intelligence services</li>
+                    </ul>
+                </div>
             </div>
-            <div class="experience">
-                <h3>Founder</h3>
-                <p class="meta">Black Eagle Project Inc. · 2025 – Present</p>
-                <p>Building open-source fitness and readiness tools for military communities.</p>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Languages & Frameworks</h4>
+                    <p>Python • R • SQL • Rust • C++ • Java • TypeScript</p>
+                </div>
+                <div class="skill-category">
+                    <h4>AI & Analytics</h4>
+                    <p>LLM Architecture • Agentic AI • Predictive Modeling • ORSA</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Platforms</h4>
+                    <p>Palantir (Gotham/Foundry) • Tableau • Power BI • Firebase • Vercel</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Infrastructure</h4>
+                    <p>Docker • Linux • CI/CD • Sovereign AI • Edge Computing</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <div class="experience-grid">
+                <div class="experience-item">
+                    <h3>PhD Candidate, Economics</h3>
+                    <p class="org">University of South Florida</p>
+                    <p class="meta">In Progress</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Doctor of Education (EdD)</h3>
+                    <p class="org">Vanderbilt University</p>
+                    <p class="meta">2022 – 2025</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Master of Business Administration</h3>
+                    <p class="org">Oakland City University</p>
+                    <p class="meta">Summa Cum Laude, 4.0 GPA</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Awards & Decorations</h2>
+            <div class="awards">
+                <span class="award">🎖️ Combat Infantryman Badge</span>
+                <span class="award">🪂 Parachutist Badge</span>
+                <span class="award">Meritorious Service Medal</span>
+                <span class="award">Army Commendation Medal</span>
+                <span class="award">Afghan Campaign Medal</span>
+                <span class="award">NATO (ISAF) Medal</span>
+                <span class="award">Norwegian Military Marching Badge</span>
             </div>
         </section>
 
         <section>
             <h2>Contact</h2>
-            <p>Interested in defense technology, AI agents, or collaboration opportunities? Reach out.</p>
+            <p>Interested in defense technology, AI systems, or collaboration? Let's connect.</p>
             <p>
                 <strong>Email:</strong> <a href="mailto:d.l.hiwig@gmail.com">d.l.hiwig@gmail.com</a><br>
-                <strong>GitHub:</strong> <a href="https://github.com/dlhiwig">github.com/dlhiwig</a>
+                <strong>GitHub:</strong> <a href="https://github.com/dlhiwig">github.com/dlhiwig</a><br>
+                <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/daniel-heiwig">linkedin.com/in/daniel-heiwig</a>
             </p>
         </section>
 
         <footer>
-            <p>© 2026 Daniel Heiwig · Built with purpose</p>
+            <p>© 2026 Daniel Heiwig · Building the future of defense AI</p>
         </footer>
     </div>
 </body>
